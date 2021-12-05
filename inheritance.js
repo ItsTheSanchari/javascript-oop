@@ -1,6 +1,10 @@
 class firstClass {
+  constructor (data) {
+    this.firstClassVariable = data 
+  }
+
    first() {
-    console.log('inside first')
+    console.log('inside first',this.firstClassVariable)
    }
 }
 
@@ -16,8 +20,12 @@ class thirdClass extends secondClass {
        }
 }
 
-const firstOne = new firstClass()
-const SecondOne = new secondClass()
-const thirdOne = new thirdClass()
+const firstOne = new firstClass(10)
 
-thirdOne.first()
+const SecondOne = new secondClass()
+const thirdOne = new thirdClass(100)
+thirdOne.first() //100
+
+firstOne.first() //10
+
+thirdOne.second() // inside second
