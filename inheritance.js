@@ -9,8 +9,12 @@ class firstClass {
 }
 
 class secondClass extends firstClass {
+    constructor (data) {
+        super(data)
+        console.log('data', data)
+    }
     second() {
-        console.log('inside second')
+        console.log('inside second',this.firstClassVariable)
        }
 }
 
@@ -22,7 +26,7 @@ class thirdClass extends secondClass {
 
 const firstOne = new firstClass(10)
 
-const SecondOne = new secondClass()
+const SecondOne = new secondClass(200)
 const thirdOne = new thirdClass(100)
 thirdOne.first() //100
 
